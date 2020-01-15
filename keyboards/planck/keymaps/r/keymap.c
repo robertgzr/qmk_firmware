@@ -33,6 +33,21 @@ enum planck_keycodes {
   EXT_PLV
 };
 
+/* tap dance declarations */
+enum {
+    W15 = 0,
+    W26,
+    W37,
+    W48,
+};
+
+/* tap dance definitions */
+qk_tap_dance_action_t tap_dance_actions[] = {
+    [W15] = ACTION_TAP_DANCE_DOUBLE(LGUI(KC_1), LGUI(KC_5)),
+    [W26] = ACTION_TAP_DANCE_DOUBLE(LGUI(KC_2), LGUI(KC_6)),
+    [W37] = ACTION_TAP_DANCE_DOUBLE(LGUI(KC_3), LGUI(KC_7)),
+    [W48] = ACTION_TAP_DANCE_DOUBLE(LGUI(KC_4), LGUI(KC_8)),
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
@@ -74,20 +89,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 /* Raise
  * ,-----------------------------------------------------------------------------------.
- * |      |   1  |   2  |   3  |   4  |   5  |   6  |   7  |   8  |   9  |   0  | Del  |
+ * |  F1  |  F2  |  F3  |  F4  |  F5  |  F6  |  F7  |  F8  |  F9  | F10  | F11  | Del  |
  * |------+------+------+------+------+-------------+------+------+------+------+------|
- * |      |  F1  |  F2  |  F3  |  F4  |      | Left | Down |  Up  |Right |      |      |
+ * |      | W1/5 | W2/6 | W3/7 | W4/8 |      | Left | Down |  Up  |Right |      |      |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * |      |  F5  |  F6  |  F7  |  F8  |      |      |Pg Dn |Pg Up |      |      | Mute |
+ * | BRIU |      |      |      |      |      |      |Pg Dn |Pg Up |      |      | Mute |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
- * |      |  F9  |  F10 |  F11 |      |             |      | Next | Vol- | Vol+ | Play |
+ * | BRID |      |      |      |      |             |      | Next | Vol- | Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
  */
 [_RAISE] = LAYOUT_planck_grid(
-    _______, KC_1,  KC_2,   KC_3,   KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_DEL,
-    _______, KC_F1, KC_F2,  KC_F3,  KC_F4,   XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX,
-    _______, KC_F5, KC_F6,  KC_F7,  KC_F8,   XXXXXXX, XXXXXXX, KC_PGDN, KC_PGUP, XXXXXXX, XXXXXXX, KC_MUTE,
-    _______, KC_F9, KC_F10, KC_F11, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY
+      KC_F1, KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_DEL,
+    _______, TD(W15), TD(W26), TD(W37), TD(W48), XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, XXXXXXX,
+    KC_BRIU, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PGDN, KC_PGUP, XXXXXXX, XXXXXXX, KC_MUTE,
+    KC_BRID, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY
 ),
 
 /* Adjust (Lower + Raise)

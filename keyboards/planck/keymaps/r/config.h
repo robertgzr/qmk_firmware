@@ -57,3 +57,6 @@
 
 #define LOWER MO(_LOWER)
 #define RAISE MO(_RAISE)
+
+/* custom maximum time between tap dance taps, in ms */
+#define TAPPING_TERM 150
