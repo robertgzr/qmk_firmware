@@ -45,6 +45,15 @@
 #ifndef NO_DEBUG
 #define NO_DEBUG
 #endif // !NO_DEBUG
+
 #if !defined(NO_PRINT) && !defined(CONSOLE_ENABLE)
 #define NO_PRINT
 #endif // !NO_PRINT
+
+/* custom keycodes and combinations */
+#define RSFT_ENTER RSFT_T(KC_ENTER)
+#define RGUI_ENTER RGUI_T(KC_ENTER)
+#define LGUI_ESC LGUI_T(KC_ESC)
+
+#define LOWER MO(_LOWER)
+#define RAISE MO(_RAISE)
