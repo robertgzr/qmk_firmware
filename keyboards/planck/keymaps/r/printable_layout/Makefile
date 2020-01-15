@@ -1,6 +1,6 @@
 PROJECT_DIR := $(shell pwd)
 
-DOCKER ?= podman
+DOCKER ?= docker
 TECTONIC_IMAGE := docker.io/dxjoke/tectonic-docker
 DATA_MOUNT := -v $(PROJECT_DIR):/data
 CACHE_MOUNT := -v $(PROJECT_DIR)/.cache:/root/.cache/Tectonic
@@ -25,6 +25,13 @@ clean: main.pdf
 
 shell:
 	$(DOCKER) $(RUN_FLAGS) bash
+
+
+# this is where the magic happens
+KEYMAP := $(PROJECT_DIR)/../keymap.c
+
+gen:
+	@awk '/\/\*/ {blk=1}; /\*\/$$/ {blk=0}; /Copyright/ {blk=0}; /Qwerty/ {blk=0}; {if(blk) print $$0}; /\*\// {blk=0}' $(KEYMAP)
 
 all: clean build
 
