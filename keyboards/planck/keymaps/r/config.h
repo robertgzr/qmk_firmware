@@ -37,19 +37,6 @@
 // Most tactile encoders have detents every 4 stages
 #define ENCODER_RESOLUTION 4
 
-/* save some space... */
-#define DISABLE_LEADER
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
-
-#ifndef NO_DEBUG
-#define NO_DEBUG
-#endif // !NO_DEBUG
-
-#if !defined(NO_PRINT) && !defined(CONSOLE_ENABLE)
-#define NO_PRINT
-#endif // !NO_PRINT
-
 /* custom keycodes and combinations */
 #define RSFT_ENTER RSFT_T(KC_ENTER)
 #define RGUI_ENTER RGUI_T(KC_ENTER)
