@@ -94,7 +94,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+-------------+------+------+------+------+------|
  * |      | W1/5 | W2/6 | W3/7 | W4/8 |      | Left | Down |  Up  |Right |      |S+Ins |
  * |------+------+------+------+------+------|------+------+------+------+------+------|
- * | BRIU |      |      |      |      |      |      |Pg Dn |Pg Up |      |      | Mute |
+ * | BRIU |      |      |      |      |      |      |Pg Dn |Pg Up | Mute |      |      |
  * |------+------+------+------+------+------+------+------+------+------+------+------|
  * | BRID |      |      |      | -*-  |             | -*-  | Next | Vol- | Vol+ | Play |
  * `-----------------------------------------------------------------------------------'
@@ -102,7 +102,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_RAISE] = LAYOUT_planck_grid(
       KC_F1, KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,   KC_F8,   KC_F9,   KC_F10,  KC_F11,  KC_DEL,
     _______, TD(W15), TD(W26), TD(W37), TD(W48), XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, XXXXXXX, S(KC_INS),
-    KC_BRIU, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PGDN, KC_PGUP, XXXXXXX, XXXXXXX, KC_MUTE,
+    KC_BRIU, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_PGDN, KC_PGUP, KC_MUTE, XXXXXXX, XXXXXXX,
     KC_BRID, XXXXXXX, XXXXXXX, XXXXXXX, _______, _______, _______, _______, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY
 ),
 
