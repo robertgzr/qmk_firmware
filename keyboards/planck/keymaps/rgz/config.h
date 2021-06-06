@@ -18,9 +18,6 @@
 #define RGUI_ENTER RGUI_T(KC_ENTER)
 #define LGUI_ESC LGUI_T(KC_ESC)
 
-#define LOWER MO(_LOWER)
-#define RAISE MO(_RAISE)
-
 /* custom maximum time between tap dance taps, in ms */
 #define TAPPING_TERM 150
 
